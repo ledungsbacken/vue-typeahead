@@ -1,15 +1,14 @@
-on: push
+on:
+  push:
+    branches:
+      - master
 name: Publish build
 jobs:
-  fILTERMASTERBRANCH:
-    name: FILTER MASTER BRANCH
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: FILTER MASTER BRANCH
-      uses: actions/checkout@master
-      with:
-        args: branch
     - name: NPM INSTALL
       uses: actions/npm@master
       with:
