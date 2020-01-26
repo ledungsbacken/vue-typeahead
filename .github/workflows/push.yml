@@ -8,7 +8,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - name: NPM INSTALL
       uses: actions/npm@master
       with:
