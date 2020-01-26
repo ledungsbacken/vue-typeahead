@@ -8,14 +8,12 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: NPM INSTALL
-      uses: actions/npm@master
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v1
       with:
-        args: install
-    - name: NPM BUILD
-      uses: actions/npm@master
-      with:
-        args: run build
+        node-version: '10.x'
+    - run: npm install
+    - run: npm build
     - name: DEPLOY TO GH-PAGES BRANCH
       uses: peaceiris/actions-gh-pages@v2
       env:
